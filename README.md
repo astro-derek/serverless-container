@@ -1,9 +1,15 @@
 # Serverless container on Google Cloud Run
 
-## Clone the repository:
+## Step 0 : Clone the repository:
 `git clone https://github.com/astro-derek/serverless-container.git`
 
-## What does this code do?
+## Step 1 : Change into directory 
+`cd serverless-container`
+
+## Step 2 : Change project id if necessary
+`gcloud config set project <PROJECT_ID>`
+
+## Step 3 : Review the code
 * Remember we were saying serverless containers are good when we want multiple
 processes in a container. This example does just that...
 * When the container runs, it executes `start.sh` which in turn
@@ -13,7 +19,7 @@ processes in a container. This example does just that...
 * any other requests are redirected to the python App
 * so this is a small scale example but serves the purpose
 
-## Build and deploy
+## Step 4 : Build and deploy
 The quickest and easiest way to create an image and deploy it is with the 
 command: 
 
@@ -34,7 +40,7 @@ set it to 1 so each container handles a single request. This will make it easier
 to see the auto scaling..
 
 
-## Review Logs and Metrics
+## Step 5 : Review Logs and Metrics
 * The logs will show that the application has started successfully.
 * They will show any errors that occur.
 * We should be able to see the requests coming in.
@@ -47,7 +53,8 @@ make the container do extra work...
 
 
 
-
+## Original material below
+The notes from the original blog are below:
 # Example: multiple processes in a container (for Cloud Run)
 
 Read the blog post for more details: http://ahmet.im/blog/cloud-run-multiple-processes-easy-way.
