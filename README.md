@@ -20,7 +20,18 @@ command:
     cd serverless-container
     gcloud run deploy
 
-You could also build the image separately too.
+You could also build the image separately too with this command:
+
+    gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/serverless:1.0.0 .
+
+Then deploy with this command:
+
+    gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/serverless:1.0.0 --platform managed --concurrency 1
+
+Note we're using concurrency 1 here... by default, Cloud Run will use concurrency
+of 80 and it will be too hard for us to generate that many requests... so we'll
+set it to 1 so each container handles a single request. This will make it easier
+to see the auto scaling..
 
 
 ## Review Logs and Metrics
