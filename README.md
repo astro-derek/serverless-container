@@ -16,7 +16,9 @@ processes in a container. This example does just that...
 ## Build and deploy
 The quickest and easiest way to create an image and deploy it is with the 
 command: 
-`gcloud run deploy`
+
+    cd serverless-container
+    gcloud run deploy
 
 You could also build the image separately too.
 
